@@ -64,14 +64,12 @@
 			<div class="row align-items-center">
 				<div class="col-6 text-center text-lg-left">
 					<p class="mb-0">
-						<?php echo sprintf( __( '%1$s %2$s %3$s.', 'blankslate' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); ?>
+						<?php printf( '%1$s %2$s %3$s.', '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); ?>
 					</p>
 				</div>
 				<div class="col-6 text-center text-lg-right developed-by">
 					<p class="py-2">
-						<?php echo sprintf( __( ' Desenvolvido por: %1$s', 'blankslate' ),
-									'<a href="https://leadresultado.com.br/"><img class="black" src="https://leadresultado.com.br/lead-resultado.png"></a></p>' );
-						?>
+						<?php printf( 'Desenvolvido por: %1$s', '<a href="https://andrecanuto.com.br/">André Canuto</a></p>' );?>
 					</p>
 				</div>
 			</div>
