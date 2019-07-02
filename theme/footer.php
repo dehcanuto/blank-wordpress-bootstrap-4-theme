@@ -21,11 +21,20 @@
 					Recife/PE<br>
 					50300-090
 				</p>
+				<ul class="d-inline-flex list-inline ft-social mx-auto">
+					<li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="https://api.whatsapp.com/send?phone=5581XXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+					<li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+				</ul>
 			</div>
 			<div class="col-12 col-md-9">
-				<h5 class="text-center text-lg-left"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h5>
+				<h5 class="text-center text-lg-left my-5 mt-lg-0">
+					<?php echo get_bloginfo( 'description' ); ?>
+				</h5>
 				<div class="row no-gutters">
-					<div class="col-6 col-lg-3">
+					<div class="col-6 col-lg-3 mb-4">
 						<h6>Menu</h6>
 						<?php 
 							wp_nav_menu( 
@@ -34,21 +43,21 @@
 									 ) );
 						?>
 					</div>
-					<div class="col-6 col-lg-3">
+					<div class="col-6 col-lg-3 mb-4">
 						<?php 
 							if ( is_active_sidebar('footer-widget-1') ) {
 								dynamic_sidebar('footer-widget-1');
 							}
 						?>
 					</div>
-					<div class="col-6 col-lg-3">
+					<div class="col-6 col-lg-3 mb-4">
 						<?php 
 							if ( is_active_sidebar('footer-widget-2') ) {
 								dynamic_sidebar('footer-widget-2');
 							}
 						?>
 					</div>
-					<div class="col-6 col-lg-3">
+					<div class="col-6 col-lg-3 mb-4">
 						<?php 
 							if ( is_active_sidebar('footer-widget-3') ) {
 								dynamic_sidebar('footer-widget-3');

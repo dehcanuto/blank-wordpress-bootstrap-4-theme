@@ -5,7 +5,7 @@ add_action( 'wp_enqueue_scripts', 'css_files' );
 function css_files() {
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.3.1', 'all');
 	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/assets/css/fontawesome.css', array(), '5.7.2', 'all');
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), 'beta-1.0.0', 'all');
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), 'beta-1.0.2', 'all');
 }
 
 // Define as folhas JS do tema.
@@ -15,7 +15,7 @@ function js_files() {
 	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), '4.3.1', true);
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '4.3.1', true);
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array(), '1.0.9', true);
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), 'beta-1.0.0', true);
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), 'beta-1.0.3', true);
 }
 
 // Adiciona uma logo ao tema com medidas prédefinidas.

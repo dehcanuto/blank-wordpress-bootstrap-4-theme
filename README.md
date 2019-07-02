@@ -19,5 +19,6 @@ Será necessário apenas o ContactForm7 para a página de contatos enviar os ema
 
 ## Diário de atualizações.
 
+- 18.06.19 : Remove a slick dot em caso de página única.
 - 14.06.19 : Inserção do top bar para contatos e redes sociais.
 - 04.06.19 : Upload da primeira versão do thema.

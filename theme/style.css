@@ -2,15 +2,15 @@
 Theme Name: Bootstrap 4 em Branco
 Theme URI: https://github.com/dehcanuto/
 Author: André Canuto
-Author URI: http://andrecanuto.com.br/
-Description: Tema em branco para construção de site responsivo. Utilizado o Bootstrap 4.3.1.
+Author URI: https://andrecanuto.com.br/
+Description: Tema exclusivo para a construção de um site responsivo para o Hotel Ponta Verde. Foi Utilizado o Bootstrap 4.3.1 e JQuery 3. Utilizado taxonomias para depoimentos, banners e pacotes. Todo o tema foi desenvolvido com códigos personalizados e o mínimo de plugin necessário para o funcionamento.
 Version: 1.0.0
 License: GNU General Public License
 License URI: https://www.gnu.org/licenses/gpl.html
 Tags: one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
 Text Domain: Bootstrap 4 tema em branco
 
-André Canuto WordPress Theme © 2011-2017 TidyThemes
+Bootstrap 4 em Branco Theme © 2015-2019 André Canuto
 André Canuto is distributed under the terms of the GNU GPL
 */
 
@@ -21,7 +21,7 @@ André Canuto is distributed under the terms of the GNU GPL
 @charset 'UTF-8';
 
 body {
-  font-family:'Roboto Regular';
+  font-family:'Roboto';
 }
 
 :root {
@@ -33,9 +33,13 @@ body {
 }
 
 header {
+  position: relative;
+  top: -100%;
   z-index: 2;
+  transition: top .7s ease;
   -webkit-box-shadow: 0 9px 18px rgba(0,0,0,.08);
-  box-shadow: 0 7px 17px rgba(0,0,0,.04);
+      -ms-transition: 0 7px 17px rgba(0,0,0,.04);
+          box-shadow: 0 7px 17px rgba(0,0,0,.04);
 }
 
 a {
@@ -117,50 +121,57 @@ article.list-article:hover {
   background: #57a3ff;
 }
 
+.head-fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: top .7s ease;
+}
+
 /* =============================
  *      FONTES
  * ========================== */
 
 @font-face {
-  font-family: 'Roboto Regular';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Roboto Regular'), url('assets/fonts/roboto/Roboto-Regular.woff') format('woff');
+  font-family: 'Roboto';
+  font-style: lighter;
+  font-weight: 100;
+  src: url('assets/fonts/roboto/Roboto-Thin.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Roboto Bold';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Roboto Bold'), url('assets/fonts/roboto/Roboto-Bold.woff') format('woff');
+  font-family: 'Roboto';
+  font-style: lighter;
+  font-weight: 200;
+  src: url('assets/fonts/roboto/Roboto-Light.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Roboto Thin';
+  font-family: 'Roboto';
   font-style: normal;
-  font-weight: normal;
-  src: local('Roboto Thin'), url('assets/fonts/roboto/Roboto-Thin.woff') format('woff');
+  font-weight: 300;
+  src: url('assets/fonts/roboto/Roboto-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Roboto Light';
+  font-family: 'Roboto';
   font-style: normal;
-  font-weight: normal;
-  src: local('Roboto Light'), url('assets/fonts/roboto/Roboto-Light.woff') format('woff');
+  font-weight: 500;
+  src: url('assets/fonts/roboto/Roboto-Medium.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Roboto Medium';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Roboto Medium'), url('assets/fonts/roboto/Roboto-Medium.woff') format('woff');
+  font-family: 'Roboto';
+  font-style: bold;
+  font-weight: 700;
+  src: url('assets/fonts/roboto/Roboto-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Roboto Black';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Roboto Black'), url('assets/fonts/roboto/Roboto-Black.woff') format('woff');
+  font-family: 'Roboto';
+  font-style: bolder;
+  font-weight: 900;
+  src: url('assets/fonts/roboto/Roboto-Black.woff') format('woff');
 }
 
 /* =============================
@@ -658,7 +669,7 @@ body.mobile-open header nav ul li a {
 }
 
 /* =============================
- *          SESSÕES
+ *        BLOG WIDGETS
  * ========================== */
 
 .widget-area ul {
@@ -813,7 +824,7 @@ footer .widget ul {
   font-weight: 900;
   font-size: 25px;
   line-height: 1;
-  color: var(--hivecloud);
+  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -907,7 +918,7 @@ footer .widget ul {
   height: 20px;
   content: '\f111';
   text-align: center;
-  color: var(--hivecloud);
+  color: #fff;
   font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -916,6 +927,39 @@ footer .widget ul {
 .slick-dots li.slick-active button:before {
   font-weight: 400;
   font-size: 14px;
+}
+
+.vertical-dots .slick-dots {
+  bottom: 1rem;
+}
+
+.vertical-dots .slick-dots {
+  position: absolute;
+  width: auto;
+  margin-top: -32px;
+  top: 50%;
+  right: 2rem;
+  opacity: .75;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.vertical-dots .slick-dots li {
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position: relative;
+}
+
+.vertical-dots .slick-dots li button {
+  color: #fff;
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .slick-slider {
@@ -1024,6 +1068,10 @@ footer .widget ul {
 }
 
 .slick-arrow.slick-hidden {
+  display: none;
+}
+
+.slick-dots li:only-child {
   display: none;
 }
 

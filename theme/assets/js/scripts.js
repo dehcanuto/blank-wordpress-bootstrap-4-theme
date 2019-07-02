@@ -1,6 +1,6 @@
 /*
  * Blank WordPress Template v1.0
- * Copyright 2019, Lead Resultado
+ * Copyright 2019, André Canuto
  * 
  * Distributed under License.
  * Date: Mar 14, 2019
@@ -15,6 +15,8 @@ $('#searchsubmit').click(function(e){
 });
 
 $(window).scroll(function(){
+	/* header fixo */
+	$(this).scrollTop() > 120 ? $("header").addClass('head-fixed') : $("header").removeClass('head-fixed');
 	/* função do voltar ao topo */
 	$(this).scrollTop() > 300 ? $(".subir-topo").show() : $(".subir-topo").hide();
 	/* função de mudar a cor do voltar ao topo */
@@ -39,7 +41,6 @@ $('.navbar-toggler').click(function(e){
 $('[href="#"]').on('click', function () {
     return false;
 });
-
 
 (function ($) {
     "use strict";

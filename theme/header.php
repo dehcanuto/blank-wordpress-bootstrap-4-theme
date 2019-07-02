@@ -12,9 +12,11 @@
 <div class="top-bar">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-lg-8 mr-auto d-flex">
-				<div class="d-inline-flex my-auto py-2">
-					<p class="mb-0">Tem alguma dúvida? Fale conosco: </p>
+			<div class="col-12 col-lg-3 text-center text-lg-left m-auto py-2 d-flex">
+				<p class="mb-0">Tem alguma dúvida? Fale conosco: </p>
+			</div>
+			<div class="col-12 col-lg-5 mr-auto d-flex">
+				<div class="d-inline-flex text-center text-lg-left m-auto py-2">
 					<ul class="d-inline-flex list-inline ml-3 contatos">
 						<li><i class="fab fa-whatsapp"></i> 8199999-9999</li>
 						<li><i class="fas fa-phone fa-flip-horizontal"></i> 99999-9999</li>
@@ -26,9 +28,10 @@
 				<div class="d-inline-flex my-auto py-2">
 					<p class="mb-0">Redes sociais: </p>
 					<ul class="d-inline-flex list-inline ml-3 contatos">
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+						<li><a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="https://api.whatsapp.com/send?phone=55819999999"><i class="fab fa-whatsapp"></i></a></li>
+						<li><a href="https://youtube.com/"><i class="fab fa-youtube"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -36,7 +39,7 @@
 	</div>
 </div>
 
-<header class="d-flex position-relative flex-lg-row align-items-center p-3 px-md-4 bg-white">
+<header class="d-flex flex-lg-row align-items-center p-3 px-md-4 bg-white">
 	<h1 class="my-0 mr-auto font-weight-normal">
 	  	<?php 
 	  		if ( has_custom_logo() ) {
