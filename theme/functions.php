@@ -1,22 +1,31 @@
 <?php
+/**
+ * Blank Theme functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package Blank Theme
+ * @since 1.0.0
+ */
 
-// Define as folhas CSS do tema.
-add_action( 'wp_enqueue_scripts', 'css_files' );
-function css_files() {
-	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.3.1', 'all');
-	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/assets/css/fontawesome.css', array(), '5.7.2', 'all');
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), 'beta-1.0.2', 'all');
+// Interrompe caso seja acessado diretamente.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-// Define as folhas JS do tema.
-add_action( 'wp_enqueue_scripts', 'js_files' );
-function js_files() {
-	wp_enqueue_script( 'jquery-3', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), '3.3.1', true);
-	wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), '4.3.1', true);
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '4.3.1', true);
-	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array(), '1.0.9', true);
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), 'beta-1.0.3', true);
-}
+/**
+ * Define as constantes
+ */
+define( 'BLANK_THEME_VERSION', '1.1.0-beta' );
+define( 'BLANK_THEME_DIR', trailingslashit( get_template_directory() ) );
+define( 'BLANK_THEME_STYLE', trailingslashit( get_stylesheet_directory_uri() ) );
+define( 'BLANK_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
+
+/**
+ * Setup helper functions of Gridmidia.
+ */
+
+require_once BLANK_THEME_DIR . 'inc/core/class-blank-theme-options.php';
 
 // Adiciona uma logo ao tema com medidas prédefinidas.
 add_theme_support( 'custom-logo', array(
@@ -26,6 +35,7 @@ add_theme_support( 'custom-logo', array(
 	'flex-width'  => true,
 	'header-text' => array( 'site-title', 'site-description' ),
 ) );
+
 function theme_prefix_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {
 		the_custom_logo();
@@ -96,7 +106,7 @@ if ( function_exists('register_sidebar') ) {
 // Funções diversas.
 add_action( 'after_setup_theme', 'blankslate_setup' );
 function blankslate_setup() {
-	load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'blankslate', BLANK_THEME_DIR . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
